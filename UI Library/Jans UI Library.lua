@@ -2583,3 +2583,4 @@ function library:Init()
 	end
 end
 
+return library
