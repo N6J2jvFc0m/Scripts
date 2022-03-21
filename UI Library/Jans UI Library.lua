@@ -2356,7 +2356,7 @@ function library:Init()
 		syn.protect_gui(self.base)
 		self.base.Parent = game:GetService"CoreGui"
 	end
-	self.main = self:Create("ImageButton", {
+	self.main = library:Create("ImageButton", {
 		AutoButtonColor = false,
 		Position = UDim2.new(0, 100, 0, 46),
 		Size = UDim2.new(0, 90, 0, 90), --500, 600
@@ -2367,13 +2367,13 @@ function library:Init()
 		Visible = false,
 		Parent = self.base
 	})
-	local top = self:Create("Frame", {
+	local top = library:Create("Frame", {
 		Size = UDim2.new(1, 0, 0, 50),
 		BackgroundColor3 = Color3.fromRGB(30, 30, 30),
 		BorderColor3 = Color3.new(),
 		Parent = self.main
 	})
-	self:Create("TextLabel", {
+	library:Create("TextLabel", {
 		Position = UDim2.new(0, 6, 0, -1),
 		Size = UDim2.new(0, 0, 0, 20),
 		BackgroundTransparency = 1,
@@ -2384,7 +2384,7 @@ function library:Init()
 		TextXAlignment = Enum.TextXAlignment.Left,
 		Parent = self.main
 	})
-	table.insert(library.theme, self:Create("Frame", {
+	table.insert(library.theme, library:Create("Frame", {
 		Size = UDim2.new(1, 0, 0, 1),
 		Position = UDim2.new(0, 0, 0, 24),
 		BackgroundColor3 = library.flags["Menu Accent Color"],
@@ -2398,27 +2398,27 @@ function library:Init()
 		ImageTransparency = 0.4,
 		Parent = top
 	})
-	self.tabHighlight = self:Create("Frame", {
+	self.tabHighlight = library:Create("Frame", {
 		BackgroundColor3 = library.flags["Menu Accent Color"],
 		BorderSizePixel = 0,
 		Parent = self.main
 	})
 	table.insert(library.theme, self.tabHighlight)
-	self.columnHolder = self:Create("Frame", {
+	self.columnHolder = library:Create("Frame", {
 		Position = UDim2.new(0, 5, 0, 55),
 		Size = UDim2.new(1, -10, 1, -60),
 		BackgroundTransparency = 1,
 		Parent = self.main
 	})
-	self.cursor = self:Create("Triangle", {
+	self.cursor = library:Create("Triangle", {
 		Color = Color3.fromRGB(180, 180, 180),
 		Transparency = 0.6,
 	})
-	self.cursor1 = self:Create("Triangle", {
+	self.cursor1 = library:Create("Triangle", {
 		Color = Color3.fromRGB(240, 240, 240),
 		Transparency = 0.6,
 	})
-	self.tooltip = self:Create("TextLabel", {
+	self.tooltip = library:Create("TextLabel", {
 		ZIndex = 2,
 		BackgroundTransparency = 1,
 		BorderSizePixel = 0,
@@ -2428,14 +2428,14 @@ function library:Init()
 		Visible = true,
 		Parent = self.base
 	})
-	self:Create("Frame", {
+	library:Create("Frame", {
 		AnchorPoint = Vector2.new(0.5, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		Size = UDim2.new(1, 10, 1, 0),
 		Style = Enum.FrameStyle.RobloxRound,
 		Parent = self.tooltip
 	})
-	self:Create("ImageLabel", {
+	library:Create("ImageLabel", {
 		Size = UDim2.new(1, 0, 1, 0),
 		BackgroundTransparency = 1,
 		Image = "rbxassetid://2592362371",
@@ -2444,7 +2444,7 @@ function library:Init()
 		SliceCenter = Rect.new(2, 2, 62, 62),
 		Parent = self.main
 	})
-	self:Create("ImageLabel", {
+	library:Create("ImageLabel", {
 		Size = UDim2.new(1, -2, 1, -2),
 		Position = UDim2.new(0, 1, 0, 1),
 		BackgroundTransparency = 1,
