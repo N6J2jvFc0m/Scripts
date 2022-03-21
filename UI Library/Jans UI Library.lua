@@ -2497,22 +2497,7 @@ function library:Init()
 			column.main.Visible = true
 		end
 	end
-	spawn(function()
-		while library do
-			wait(1)
-			local Configs = self:GetConfigs()
-			for _, config in next, Configs do
-				if not table.find(self.options["Config List"].values, config) then
-					self.options["Config List"]:AddValue(config)
-				end
-			end
-			for i, config in next, self.options["Config List"].values do
-				if not table.find(Configs, config) then
-					self.options["Config List"]:RemoveValue(config)
-				end
-			end
-		end
-	end)
+
 	for _, tab in next, self.tabs do
 		if tab.canInit then
 			tab:Init()
